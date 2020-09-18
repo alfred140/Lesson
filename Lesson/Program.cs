@@ -15,16 +15,14 @@ namespace Lab1
             long total = 0;            
 
             for (int i = 0; i < numbers.Length; i++)
-            {
-                
+            {                
                 if (Char.IsDigit(numbers[i]))
                 {
                     for (int j = i + 1; j < numbers.Length; j++)
                     {
                         string before = numbers.Substring(0, i);
                         string marked = numbers.Substring(i, j - i + 1);
-                        string after = numbers.Substring(j + 1, numbers.Length - j - 1);
-                        
+                        string after = numbers.Substring(j + 1, numbers.Length - j - 1);                        
 
                         if (!Char.IsDigit(numbers[j]))
                         {
@@ -41,7 +39,6 @@ namespace Lab1
                             Console.ResetColor();
                             Console.WriteLine(after);
 
-
                             try
                             {
                                 total += long.Parse(marked);
@@ -55,18 +52,12 @@ namespace Lab1
                             if (marked.Contains(marked[0]))
                             {
                                 break;
-                            }
-                            
-                        }
-                        
+                            }                            
+                        }                        
                     }
-
                 }   
-
-            }            
-            
+            }                        
             Console.WriteLine($"\n Marked strings summarized: {total}");
-
             Console.ReadKey();
         }        
     }
