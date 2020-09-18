@@ -12,8 +12,7 @@ namespace Lab1
             string numbers = Console.ReadLine();
             Console.WriteLine();
 
-            long total = 0;
-            
+            long total = 0;            
 
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -27,7 +26,7 @@ namespace Lab1
                         string after = numbers.Substring(j + 1, numbers.Length - j - 1);
                         
 
-                        if (Char.IsLetter(numbers[j]))
+                        if (!Char.IsDigit(numbers[j]))
                         {
                             break;
                         }
@@ -64,14 +63,12 @@ namespace Lab1
 
                 }   
 
-            }
-            
+            }            
             
             Console.WriteLine($"\n Marked strings summarized: {total}");
 
             Console.ReadKey();
-        }
-        
+        }        
     }
 }
     
